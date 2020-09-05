@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./hard.css">
+    <script src="../jquery-3.5.1.min.js" ></script>
+    <link href="https://fonts.googleapis.com/css2?family=B612&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <title>hard</title>
+</head>
+<body>
+
+    <div class="timer" id="timer"></div>
+
+    
+    <div class="cards">
+
+        <div class="pause">
+            <div class="pause-card">paused</div>
+        </div>
+       
+
+        <div class="ready">
+            <div class="goodluck"><h1>GOOD LUCK</h1></div>         
+        </div>
+        <div class="hardLuck">
+            <div class="hardLuck-card">
+                
+                <h1>OUT OF TIME</h1>
+                <a href="./hard.html" class="retry"><i class="fas fa-sync"></i></a>
+                <a href="../home.html" class="home"><i class="fas fa-home"></i></a>
+            </div>
+        </div>
+        <div class="gameOver" id="gameOver">
+            <div class="nice" id="nice">
+                <h1>NICE</h1>
+                <div class="wincont">
+                  <div class="win" ><pre>Correct Flips   :</pre> <span class="correct"></span></div>
+                  <div class="lost"><pre>Wrong Flips    :</pre> <span class="wrong"></span></div>
+                  <div class="time"><pre>Time              :</pre> <span class="Time"></span> </div>
+                  <a href="./hard.html" class="retry"><i class="fas fa-sync"></i></a>
+                  <a href="../home.html" class="home"><i class="fas fa-home"></i></a>
+                </div>
+            </div>         
+        </div>
+        
+
+        <div class="card"  data-shap="star" id="test">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-star"></i></div>
+        </div>
+
+        <div class="card"  data-shap="star">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-star"></i></div>
+        </div>
+
+        <div class="card" data-shap="bell">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bell"></i></div>
+        </div>
+        <div class="card" data-shap="bell">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bell"></i></div>
+        </div>
+        <div class="card" data-shap="battery">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-battery-full"></i></div>
+        </div>
+        <div class="card" data-shap="battery">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-battery-full"></i></div>
+        </div>
+        <div class="card" data-shap="divide" >
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-divide"></i></div>
+        </div>
+        <div class="card" data-shap="divide">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-divide"></i></div>
+        </div>
+        <div class="card" data-shap="binoculars">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-binoculars"></i></div>
+        </div>
+        <div class="card" data-shap="binoculars">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-binoculars"></i></div>
+        </div>
+        <div class="card" data-shap="fire">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-fire"></i></div>
+        </div>
+        <div class="card" data-shap="fire">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-fire"></i></div>
+        </div>
+        <div class="card" data-shap="stamp">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-stamp"></i></div>
+        </div>
+        <div class="card" data-shap="stamp">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-stamp"></i></div>
+        </div>
+        <div class="card" data-shap="compass">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-compass"></i></div>
+        </div>
+        <div class="card" data-shap="compass">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-compass"></i></div>
+        </div>
+        <div class="card" data-shap="anchor">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-anchor"></i></div>
+        </div>
+        <div class="card" data-shap="anchor">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-anchor"></i></i></div>
+        </div>
+        <div class="card" data-shap="android">
+            <div class="front"></div>
+            <div class="back"><i class="fab fa-android"></i></div>
+        </div>
+        <div class="card" data-shap="android">
+            <div class="front"></div>
+            <div class="back"><i class="fab fa-android"></i></div>
+        </div>
+        <div class="card" data-shap="apple">
+            <div class="front"></div>
+            <div class="back"><i class="fab fa-apple"></i></div>
+        </div>
+        <div class="card" data-shap="apple">
+            <div class="front"></div>
+            <div class="back"><i class="fab fa-apple"></i></div>
+        </div>
+        <div class="card" data-shap="balance">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-balance-scale"></i></div>
+        </div>
+        <div class="card" data-shap="balance">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-balance-scale"></i></div>
+        </div>
+        <div class="card" data-shap="bomb">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bomb"></i></div>
+        </div>
+        <div class="card" data-shap="bomb">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bomb"></i></div>
+        </div>
+        <div class="card" data-shap="bolt">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bolt"></i></div>
+        </div>
+        <div class="card" data-shap="bolt">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bolt"></i></div>
+        </div>
+        <div class="card" data-shap="bone">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bone"></i></div>
+        </div>
+        <div class="card" data-shap="bone">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bone"></i></div>
+        </div>
+        <div class="card" data-shap="brain">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-brain"></i></div>
+        </div>
+        <div class="card" data-shap="brain">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-brain"></i></div>
+        </div>
+        <div class="card" data-shap="bug">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bug"></i></div>
+        </div>
+        <div class="card" data-shap="bug">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-bug"></i></div>
+        </div>
+        <div class="card" data-shap="camera">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-camera"></i></div>
+        </div>
+        <div class="card" data-shap="camera">
+            <div class="front"></div>
+            <div class="back"><i class="fas fa-camera"></i></div>
+        </div>
+    </div>
+  <script src="./hard.js"></script>  
+</body>
+</html>
