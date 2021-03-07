@@ -11,7 +11,7 @@
 
 .timer {
   width: 0;
-  height: 3px;
+  height: 5px;
   background-color: rgb(78, 7, 7);
 }
 
@@ -70,7 +70,7 @@
   overflow: hidden;
   display: flex;
   visibility: hidden;
-  font-size: 2vw;
+  font-size: 1rem;
   user-select: none;
 }
 
@@ -88,7 +88,7 @@
   position: relative;
   text-align: center;
   justify-content: center;
-  font-size: 1.5vw;
+  font-size: 1rem;
 }
 
 .pause-card {
@@ -105,7 +105,7 @@
   position: relative;
   text-align: center;
   justify-content: center;
-  font-size: 5vw;
+  font-size: 1rem;
 }
 
 .nice {
@@ -120,10 +120,12 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  cursor: pointer;
+  user-select: none;
 }
 
 .nice .retry {
-  font-size: 3vw;
+  font-size: 2rem;
   position: absolute;
   bottom: 40px;
   right: 30%;
@@ -134,7 +136,7 @@
 }
 
 .nice .home {
-  font-size: 3vw;
+  font-size: 2rem;
   position: absolute;
   bottom: 40px;
   left: 30%;
@@ -161,7 +163,7 @@
 }
 
 .hardLuck-card .retry {
-  font-size: 2.3em;
+  font-size: 2rem;
   position: absolute;
   bottom: 80px;
   right: 30%;
@@ -171,7 +173,7 @@
   user-select: none;
 }
 .hardLuck-card .home {
-  font-size: 2.5em;
+  font-size: 2rem;
   position: absolute;
   bottom: 80px;
   left: 30%;
@@ -182,7 +184,7 @@
 }
 
 .nice h1 {
-  font-size: 2vw;
+  font-size: 4rem;
   align-self: center;
 }
 
@@ -206,12 +208,24 @@
 .cards {
   width: 100vw;
   display: grid;
-  grid-template-columns: 16.6666667% 16.6666667% 16.6666667% 16.6666667% 16.6666667% 16.6666667%;
-  grid-template-rows: 16.6666667% 16.6666667% 16.6666667% 16.6666667% 16.6666667% 16.6666667%;
   grid-column-gap: 1px;
   grid-row-gap: 1px;
   overflow: hidden;
   z-index: 3;
+}
+.easy {
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+.medium {
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 25% 25% 25% 25%;
+}
+
+.hard {
+  grid-template-columns: 16.6666667% 16.6666667% 16.6666667% 16.6666667% 16.6666667% 16.6666667%;
+  grid-template-rows: 16.6666667% 16.6666667% 16.6666667% 16.6666667% 16.6666667% 16.6666667%;
 }
 
 .card {
@@ -238,8 +252,8 @@
   height: 100%;
   background-color: #db4625;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  right: 0;
   z-index: 1;
   transform: rotateY(180deg);
   display: flex;
@@ -265,4 +279,16 @@
 
 .show {
   visibility: visible;
+}
+
+@media (max-width: 600px) {
+  .goodluck,
+  .pause-card,
+  .hardLuck-card,
+  .nice {
+    width: 70vw;
+  }
+  .card i {
+    font-size: 3rem;
+  }
 }

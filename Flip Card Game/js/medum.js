@@ -1,38 +1,39 @@
 $(document).ready(function () {
-  const timer = $("#timer");
-  const cont = $(".cards");
-  const goodLuck = $(".goodluck");
-  const cards = Array.from($(".card"));
-  const cardsIndexes = [...Array(cards.length).keys()];
-  const ready = $(".ready");
-  const pause = $(".pause");
-
-  let totalWrongTries =
-    JSON.parse(localStorage.getItem("totalWrongTries")) || 0;
-  let totalCorecktFlip =
-    JSON.parse(localStorage.getItem("totalCorecktFlip")) || 0;
-  let bestTime = JSON.parse(localStorage.getItem("bestTime")) || "-:-";
-  let corecktFlip = 0;
-  let wrongTries = 0;
+  const timer = $("#timer"),
+    cont = $(".cards"),
+    goodLuck = $(".goodluck"),
+    cards = Array.from($(".card")),
+    cardsIndexes = [...Array(cards.length).keys()],
+    ready = $(".ready"),
+    pause = $(".pause");
+  let n = 0,
+    w = 0,
+    starTimer,
+    wrongTries = 0,
+    corecktFlip = 0,
+    totalWrongTries = JSON.parse(localStorage.getItem("mTotalWrongTries")) || 0,
+    totalCorecktFlip =
+      JSON.parse(localStorage.getItem("mTotalCorecktFlip")) || 0,
+    bestTime = JSON.parse(localStorage.getItem("mBestTime")) || "-:-";
 
   $(cont).height($(window).height() - $(timer).height());
 
-  let n = 0;
-  let w = 0;
   function counter() {
     n++;
-    w = w + 1.6666667;
-    timer.css("width", `${w}vw`);
+    w = w + 0.83333333;
+    timer.animate({
+      width: `${w}vw`,
+    });
 
-    if (n == 60) {
+    if (n == 180) {
       clearInterval(starTimer);
       $(".hardLuck").addClass("show");
     }
   }
 
-  let starTimer;
   goodLuck.click(() => {
     ready.addClass("hide");
+
     starTimer = setInterval(counter, 1000);
   });
 
@@ -59,9 +60,7 @@ $(document).ready(function () {
 
   cards.forEach((card, index) => {
     card.style.order = cardsIndexes[index];
-    card.addEventListener("click", () => {
-      checker(card);
-    });
+    card.addEventListener("click", () => checker(card));
   });
 
   function checker(card) {
@@ -92,19 +91,20 @@ $(document).ready(function () {
         setTimeout(() => {
           first.classList.add("hide");
           second.classList.add("hide");
-        }, 1000);
+        }, 1500);
 
         corecktFlip++;
         totalCorecktFlip++;
         localStorage.setItem(
-          "totalCorecktFlip",
+          "mTotalCorecktFlip",
           JSON.stringify(totalCorecktFlip)
         );
       } else {
         wrongTries++;
         totalWrongTries++;
+
         localStorage.setItem(
-          "totalWrongTries",
+          "mTotalWrongTries",
           JSON.stringify(totalWrongTries)
         );
 
@@ -125,7 +125,6 @@ $(document).ready(function () {
       clearInterval(starTimer);
 
       // win card
-
       $(".correct").text(corecktFlip);
       $(".wrong").text(wrongTries);
       $(".Time").text(n + "s");
@@ -137,7 +136,7 @@ $(document).ready(function () {
       x = bestTime - n;
 
       if (bestTime == "-:-" || x > 0) {
-        localStorage.setItem("bestTime", JSON.stringify(n));
+        localStorage.setItem("mBestTime", JSON.stringify(n));
       }
     }
   }
